@@ -1,0 +1,24 @@
+body { 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+    padding: 20px; 
+    background-color: #f0f8ff; 
+    margin: 0;
+}
+
+.contenedor { 
+    margin-top: 50px; 
+}
+
+h1 { 
+    color: #2e7d32; 
+}
+
+.premio-box { 
+    border: 2px dashed #2e7d32; 
+    padding: 20px; 
+    border-radius: 10px; 
+    background: white;
+    max-width: 300px; /* Asegura que se vea bien en móviles */
+    margin: 0 auto;   /* Centra la caja */
+}
