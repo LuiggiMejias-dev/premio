@@ -3,16 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Felicidades!</title>
+    <title>EcoCash App</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Fuente Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="contenedor">
-        <h1>¡Felicidades!</h1>
-        <div class="premio-box">
-            <p>Has sido seleccionado para un premio especial.</p>
-            <p><strong>Código de canje: GANADOR2026</strong></p>
+
+    <!-- Modal de Bienvenida -->
+    <div id="modal-bienvenida" class="modal">
+        <div class="modal-contenido">
+            <h2>¡Felicidades! 🎉</h2>
+            <p>Has recibido un bono de <strong>50 Eco-Puntos</strong> por ser parte de la comunidad UTP.</p>
+            <button onclick="cerrarModal()">¡Gracias!</button>
         </div>
     </div>
+
+    <div class="app-container">
+        <header>
+            <h1>EcoCash UTP</h1>
+            <p>¡Hola, Comunidad UTP!</p>
+        </header>
+
+        <div class="tarjeta-flotante">
+            <p>Saldo Actual</p>
+            <h2>50 Eco-Puntos</h2>
+            <p><small>¡Bono de bienvenida activado!</small></p>
+            
+            <!-- Barra de Progreso -->
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 70%;"></div>
+            </div>
+            <p><small>A 20 puntos del nivel "Eco-Gold"</small></p>
+        </div>
+
+        <section class="beneficios">
+            <h3>Tus Beneficios</h3>
+            <div class="cupon">
+                <span>🖨️ 10 Fotocopias Gratis</span>
+                <button class="btn-usado">Canjeado</button>
+            </div>
+            <div class="cupon">
+                <span>☕ 2x1 en Cafés</span>
+                <button class="btn-canjear">Canjear</button>
+            </div>
+            <div class="cupon">
+                <span>🎫 Sorteo Smartwatch</span>
+                <button class="btn-canjear">Canjear</button>
+            </div>
+        </section>
+
+        <section class="seccion-canje">
+            <h3>¿Tienes un código?</h3>
+            <div class="input-grupo">
+                <input type="text" placeholder="Ingresa tu código...">
+                <button class="btn-validar">Validar</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Muestra el modal apenas carga la página
+        window.onload = function() {
+            document.getElementById('modal-bienvenida').style.display = 'flex';
+        };
+
+        // Función para cerrar el modal
+        function cerrarModal() {
+            document.getElementById('modal-bienvenida').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
