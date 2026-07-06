@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoCash App</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fuente Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Modal de Bienvenida -->
     <div id="modal-bienvenida" class="modal">
         <div class="modal-contenido">
             <h2>¡Felicidades! 🎉</h2>
             <p>Has recibido un bono de <strong>50 Eco-Puntos</strong> por ser parte de la comunidad UTP.</p>
             <button onclick="cerrarModal()">¡Gracias!</button>
+        </div>
+    </div>
+
+    <div id="modal-accion" class="modal" style="display: none;">
+        <div class="modal-contenido">
+            <h2 id="modal-titulo">Aviso</h2>
+            <p id="modal-mensaje">Mensaje aquí</p>
+            <button onclick="cerrarModalAccion()">Cerrar</button>
         </div>
     </div>
 
@@ -30,7 +36,6 @@
             <h2>50 Eco-Puntos</h2>
             <p><small>¡Bono de bienvenida activado!</small></p>
             
-            <!-- Barra de Progreso -->
             <div class="progress-bar">
                 <div class="progress-fill" style="width: 70%;"></div>
             </div>
@@ -41,15 +46,15 @@
             <h3>Tus Beneficios</h3>
             <div class="cupon">
                 <span>🖨️ 10 Fotocopias Gratis</span>
-                <button class="btn-usado">Canjeado</button>
+                <button class="btn-usado" onclick="mostrarMensaje('¡Ups!', 'Este premio ya fue canjeado.')">Canjeado</button>
             </div>
             <div class="cupon">
                 <span>🧁 1 queque casero</span>
-                <button class="btn-canjear">Canjear</button>
+                <button class="btn-canjear" onclick="mostrarMensaje('¡Éxito!', 'Has canjeado tu queque casero.')">Canjear</button>
             </div>
             <div class="cupon">
                 <span>🎫 Sorteo Smartwatch</span>
-                <button class="btn-canjear">Canjear</button>
+                <button class="btn-canjear" onclick="mostrarMensaje('¡Éxito!', 'Has participado en el sorteo del Smartwatch.')">Canjear</button>
             </div>
         </section>
 
@@ -63,14 +68,22 @@
     </div>
 
     <script>
-        // Muestra el modal apenas carga la página
         window.onload = function() {
             document.getElementById('modal-bienvenida').style.display = 'flex';
         };
 
-        // Función para cerrar el modal
         function cerrarModal() {
             document.getElementById('modal-bienvenida').style.display = 'none';
+        }
+
+        function mostrarMensaje(titulo, mensaje) {
+            document.getElementById('modal-titulo').innerText = titulo;
+            document.getElementById('modal-mensaje').innerText = mensaje;
+            document.getElementById('modal-accion').style.display = 'flex';
+        }
+
+        function cerrarModalAccion() {
+            document.getElementById('modal-accion').style.display = 'none';
         }
     </script>
 </body>
